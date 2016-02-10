@@ -1,0 +1,4 @@
+--recursive
+--compilers js:babel-register
+--reporter nyan
+-b
