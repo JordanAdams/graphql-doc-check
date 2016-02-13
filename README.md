@@ -4,7 +4,7 @@ GraphQL Documentation Check
 <!-- [![Build Status](https://travis-ci.org/JordanAdams/graphql-doc-check.svg?branch=master)](https://travis-ci.org/JordanAdams/graphql-doc-check)
 [![Dependency Status](https://david-dm.org/jordanadams/graphql-doc-check.svg)](https://david-dm.org/jordanadams/graphql-doc-check) -->
 
-Check for missing descriptions and field names in your GraphQL API.
+Quickly check for missing documentation in your GraphQL API.
 
 ## Installation
 
@@ -17,17 +17,19 @@ API is running at `http://localhost:80/graphql`.
 
     $ graphql-doc-check
 
-Alternatively, you can pass a url to check.
+Alternatively, you can pass a url to check. **(Important: Missing the trailing slash will result in /graphql being assumed)**
 
-    $ graphql-doc-check https://example.com:8888/graph
+    $ graphql-doc-check graphql-swapi.parseapp.com/
 
-Any missing pieces of the passed url will be populated to match the assumed url.
+Results are shown in a tree structure with fields missing documentation in red.
 
-    $ graphql-doc-check example.com/graph
+    Type1
+    ├─ field1 [missing | properties | here]
+    │  ├─ arg1
+    │  ├─ arg2
+    └─ field2
+       └─ arg3 [description]
 
-    Is equal to
-
-    $ graphql-doc-check http://example.com:80/graph
 
 ## License
 
