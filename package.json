@@ -5,6 +5,9 @@
   "author": "Jordan Adams <hi@jordanadams.co.uk>",
   "license": "ISC",
   "main": "dist/index.js",
+  "bin": {
+    "graphql-doc-check": "dist/index.js"
+  },
   "scripts": {
     "clean": "rm -rf dist",
     "build": "npm run clean && babel src -d dist",

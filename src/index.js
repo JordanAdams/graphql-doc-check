@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import request from 'request-promise'
 import retriever from './retriever'
 import printer from './printer'
