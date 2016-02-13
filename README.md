@@ -1,10 +1,12 @@
 GraphQL Documentation Check
 ========
 
-<!-- [![Build Status](https://travis-ci.org/JordanAdams/graphql-doc-check.svg?branch=master)](https://travis-ci.org/JordanAdams/graphql-doc-check)
-[![Dependency Status](https://david-dm.org/jordanadams/graphql-doc-check.svg)](https://david-dm.org/jordanadams/graphql-doc-check) -->
+[![Build Status](https://travis-ci.org/JordanAdams/graphql-doc-check.svg?branch=master)](https://travis-ci.org/JordanAdams/graphql-doc-check)
+[![Dependency Status](https://david-dm.org/jordanadams/graphql-doc-check.svg)](https://david-dm.org/jordanadams/graphql-doc-check)
 
-Quickly check for missing documentation in your GraphQL API.
+Quickly find any missing documentation in your GraphQL API using introspection. Performs inspections remotely, without any need to access code.
+
+![Example screenshot](media/screenshot.png)
 
 ## Installation
 
@@ -17,14 +19,14 @@ API is running at `http://localhost:80/graphql`.
 
     $ graphql-doc-check
 
-Alternatively, you can pass a url to check. **(Important: Missing the trailing slash will result in /graphql being assumed)**
+Alternatively, you can pass a URL to check.
 
-    $ graphql-doc-check graphql-swapi.parseapp.com/
+    $ graphql-doc-check https://example.com/graph
 
 Results are shown in a tree structure with fields missing documentation in red.
 
     Type1
-    ├─ field1 [missing | properties | here]
+    ├─ field1 [missing | properties]
     │  ├─ arg1
     │  ├─ arg2
     └─ field2
