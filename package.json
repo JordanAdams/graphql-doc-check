@@ -9,17 +9,34 @@
     "clean": "rm -rf dist",
     "build": "npm run clean && babel src -d dist",
     "prepublish": "npm run build",
-    "test": "mocha"
+    "test": "mocha",
+    "coverage": "babel-node node_modules/isparta/bin/isparta cover --report text node_modules/mocha/bin/_mocha -- --reporter landing"
   },
   "dependencies": {
-    "babel": "^6.5.1",
-    "babel-cli": "^6.5.1",
-    "babel-preset-es2015": "^6.5.0",
-    "graphql-parser": "^2.1.0",
+    "ascii-tree": "^0.3.0",
+    "chalk": "^1.1.1",
+    "lodash": "^4.3.0",
     "request-promise": "^2.0.0"
   },
   "devDependencies": {
+    "babel": "^6.5.1",
+    "babel-cli": "^6.5.1",
+    "babel-eslint": "^4.1.8",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "expect": "^1.14.0",
+    "isparta": "^4.0.0",
     "mocha": "^2.4.5",
+    "sinon": "^1.17.3",
+    "sinon-as-promised": "^4.0.0",
     "standard": "^6.0.4"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "src"
+    }
   }
 }
