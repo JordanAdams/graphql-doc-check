@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 - Changelog file
 
 ### Changed
+- Git now ignores npm-debug.log
 - Makes screenshot URL in README absolute
 
 
