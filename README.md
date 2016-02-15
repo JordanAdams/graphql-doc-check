@@ -1,6 +1,8 @@
 GraphQL Documentation Check
 ========
 
+[![Join the chat at https://gitter.im/JordanAdams/graphql-doc-check](https://badges.gitter.im/JordanAdams/graphql-doc-check.svg)](https://gitter.im/JordanAdams/graphql-doc-check?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/JordanAdams/graphql-doc-check.svg?branch=master)](https://travis-ci.org/JordanAdams/graphql-doc-check)
 [![Dependency Status](https://david-dm.org/jordanadams/graphql-doc-check.svg)](https://david-dm.org/jordanadams/graphql-doc-check)
 
