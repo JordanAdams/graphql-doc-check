@@ -16,31 +16,41 @@ const query = `query {
   }
 }`
 
-export default (request) => ({
-  /**
-   * Get a GraphQL schema at the given URL
-   *
-   * @param  {String} url GraphQL API URL
-   * @return {Promise}    Schema object
-   */
-  get: (url = 'http://localhost/graphql') => {
-    const options = {
-      url: url,
-      qs: { query },
-      json: true
-    }
-
-    return request(options)
-      .then(
-        res => res.data.schema,
-        () => {
-          console.error(`Unable to connect to ${url}.`)
-          process.exit()
-        }
-      )
-      .catch(() => {
-        console.log(`GraphQL schema not found at ${url}.`)
-        process.exit()
-      })
+export default (request) => {
+  const makeHeaders = (headers = []) => {
+    return headers.reduce((acc, header) => {
+      const [name, value] = header.split(':')
+      acc[name] = value
+    }, {})
   }
-})
+
+  return {
+    /**
+     * Get a GraphQL schema at the given URL
+     *
+     * @param  {String} url GraphQL API URL
+     * @return {Promise}    Schema object
+     */
+    get: (url = 'http://localhost/graphql', options = {}) => {
+      const requestOptions = {
+        url,
+        qs: { query },
+        headers: options.headers || {},
+        json: true
+      }
+
+      return request(requestOptions)
+        .then(
+          res => res.data.schema,
+          () => {
+            console.error(`Unable to connect to ${url}.`)
+            process.exit(1)
+          }
+        )
+        .catch(() => {
+          console.log(`GraphQL schema not found at ${url}.`)
+          process.exit(1)
+        })
+    }
+  }
+}
