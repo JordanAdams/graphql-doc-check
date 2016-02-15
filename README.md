@@ -7,7 +7,7 @@ GraphQL Documentation Check
 
 Quickly find any missing documentation in your GraphQL API using introspection. Performs inspections remotely, without any need to access code.
 
-![Example screenshot](media/screenshot.png)
+![Example screenshot](http://github.com/jordanadams/graphql-doc-check/media/screenshot.png)
 
 ## Installation
 
