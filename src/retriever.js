@@ -17,13 +17,6 @@ const query = `query {
 }`
 
 export default (request) => {
-  const makeHeaders = (headers = []) => {
-    return headers.reduce((acc, header) => {
-      const [name, value] = header.split(':')
-      acc[name] = value
-    }, {})
-  }
-
   return {
     /**
      * Get a GraphQL schema at the given URL

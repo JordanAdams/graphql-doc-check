@@ -1,6 +1,12 @@
 import _ from 'lodash'
 
 const parser = function () {
+  /**
+   * Determines if a type should be ignored from parsing
+   *
+   * @param  {Object} type Type to check
+   * @return {Boolean}     Should be ignored?
+   */
   const typeShouldBeIgnored = (type) => {
     const ignores = [
       '__Type',

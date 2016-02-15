@@ -5,6 +5,12 @@ import parser from './parser'
 const printer = {
   missingTotal: 0,
 
+  /**
+   * Renders a schema's results
+   *
+   * @param  {Object} schema Schema to render
+   * @return {String}        Result output
+   */
   print (schema) {
     this.missingTotal = 0
 
@@ -16,6 +22,11 @@ const printer = {
     return this.renderHeading() + '\n\n' + trees
   },
 
+  /**
+   * Renders the heading
+   *
+   * @return {String} Heading
+   */
   renderHeading () {
     switch (this.missingTotal) {
       case 0: return chalk.green('✔︎ No fields are missing documentation')
@@ -24,6 +35,12 @@ const printer = {
     }
   },
 
+  /**
+   * Render a list of types
+   *
+   * @param  {Array} types Types to render
+   * @return {Array}       Rendered types
+   */
   renderTypes (types) {
     return types.map(type => {
       let output = this.renderResultLine(type)
@@ -37,11 +54,17 @@ const printer = {
     })
   },
 
+  /**
+   * Render a list of fields
+   *
+   * @param  {Array}  fields Fields to render
+   * @return {String}        Rendered fields
+   */
   renderFields (fields) {
     return fields.map(field => {
       let output = this.renderResultLine(field)
 
-      const args = this.parseArgs(field.args)
+      const args = this.renderArgs(field.args)
       if (args) {
         output += `\n${args}`
       }
@@ -50,12 +73,24 @@ const printer = {
     }).join('\n')
   },
 
-  parseArgs (args) {
+  /**
+   * Render a list of arguments
+   *
+   * @param  {Array}  args Args to render
+   * @return {String}      Rendered args
+   */
+  renderArgs (args) {
     return args.map(arg => {
       return '###' + this.renderResultLine(arg)
     }).join('\n')
   },
 
+  /**
+   * Renders a single result line: "name [prop1 | prop2]"
+   *
+   * @param  {Object} ... Result to render
+   * @return {String}     Rendered result line
+   */
   renderResultLine ({ name, missing }) {
     if (missing.length > 0) {
       this.missingTotal++
@@ -66,21 +101,15 @@ const printer = {
     return name
   },
 
+  /**
+   * Render a missing list: "[prop1 | prop2]"
+   *
+   * @param  {Array}  missing Missing props
+   * @return {String}         Rendered missing props
+   */
   renderMissingList (missing) {
     return '[' + missing.join(' | ') + ']'
   }
 }
 
 export default printer
-
-// Missing 18 descriptions
-
-// Query [✗ desc | ✗ name]
-//   person
-//     id [✗ desc]
-//   people [✗ desc | ✗ name]
-
-// Query [desc|name]
-// ├- person
-// │	 ├- id [desc]
-// └- people [desc|name]
