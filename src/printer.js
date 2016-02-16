@@ -1,6 +1,5 @@
 import asciiTree from 'ascii-tree'
 import chalk from 'chalk'
-import parser from './parser'
 
 const printer = {
   missingTotal: 0,
@@ -11,15 +10,14 @@ const printer = {
    * @param  {Object} schema Schema to render
    * @return {String}        Result output
    */
-  print (schema) {
+  print (results) {
     this.missingTotal = 0
 
-    const types = parser.parseTypes(schema.types)
-    const trees = this.renderTypes(types)
+    const typeTrees = this.renderTypes(results.types)
       .map(type => asciiTree.generate(type))
       .join('\n\n')
 
-    return this.renderHeading() + '\n\n' + trees
+    return this.renderHeading() + '\n\n' + typeTrees
   },
 
   /**

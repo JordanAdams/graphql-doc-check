@@ -4,6 +4,7 @@ import yargs from 'yargs'
 import request from 'request-promise'
 import retriever from './retriever'
 import printer from './printer'
+import parser from './parser'
 
 // Parse arguments & options
 const argv = yargs
@@ -34,5 +35,6 @@ const headers = argv.header.reduce((acc, header) => {
 // Retrieve schema and print results
 const options = { headers }
 retriever(request).get(argv._[0], options)
-  .then(schema => printer.print(schema))
+  .then(schema => parser.parse(schema))
+  .then(results => printer.print(results))
   .then(output => console.log(output))

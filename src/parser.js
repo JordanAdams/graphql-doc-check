@@ -105,6 +105,17 @@ const parser = function () {
           return false
         })
         .value()
+    },
+
+    /**
+     * Parse a given schema
+     * @param  {Object} schema Schema to parse
+     * @return {Object}        Parsed schema
+     */
+    parse (schema) {
+      schema.types = this.parseTypes(schema.types)
+
+      return schema
     }
   }
 }

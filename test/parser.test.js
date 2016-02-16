@@ -63,4 +63,38 @@ describe('parser', function () {
       }
     ])
   })
+
+  it('should parse a schema', function () {
+    const schema = { types: fixtures.types }
+
+    expect(parser.parse(schema)).toEqual({
+      types: [
+        {
+          name: 'type1',
+          missing: ['description'],
+          fields: []
+        },
+        {
+          name: 'type2',
+          missing: [],
+          fields: [
+            { name: 'field1', missing: ['description'], args: [] }
+          ]
+        },
+        {
+          name: 'type3',
+          missing: [],
+          fields: [
+            {
+              name: 'field2',
+              missing: [],
+              args: [
+                { name: 'arg1', missing: ['description'] }
+              ]
+            }
+          ]
+        }
+      ]
+    })
+  })
 })
