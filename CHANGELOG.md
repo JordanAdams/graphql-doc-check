@@ -7,6 +7,9 @@ All notable changes to this project will be documented in this file.
 - Changelog file
 
 ### Changed
+- Unifies schema format across retriever, parser and printer. Allows for easier
+  reasoning of data flow.
+- Tidies up some code and adds missing comments
 - Git now ignores npm-debug.log
 - Makes screenshot URL in README absolute
 
