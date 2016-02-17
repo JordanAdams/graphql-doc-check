@@ -36,6 +36,10 @@ const parser = function () {
       missing.push('description')
     }
 
+    if (item.isDeprecated && _.isEmpty(item.deprecationReason)) {
+      missing.push('deprecationReason')
+    }
+
     return { name: item.name, missing }
   }
 

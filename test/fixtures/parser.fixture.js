@@ -16,18 +16,36 @@ const args = [
 const fields = [
   {
     name: 'field1',
-    description: ''
+    description: '',
+    isDeprecated: false,
+    deprecationReason: null
   },
   {
     name: 'field2',
     description: 'Args has missing. Keep me',
+    isDeprecated: false,
+    deprecationReason: null,
     args: [
       { name: 'arg1', description: '' }
     ]
   },
   {
     name: 'field2',
-    description: 'I have a desc. Ignore me'
+    description: 'I have a desc. Ignore me',
+    isDeprecated: false,
+    deprecationReason: null
+  },
+  {
+    name: 'field3',
+    description: 'I\'m depricated but don\'t have a reason. Keep me',
+    isDeprecated: true,
+    deprecationReason: null
+  },
+  {
+    name: 'field4',
+    description: 'I\'m depricated and have a reason. Ignore me',
+    isDeprecated: true,
+    deprecationReason: 'Example'
   }
 ]
 

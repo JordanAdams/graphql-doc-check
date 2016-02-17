@@ -30,6 +30,11 @@ describe('parser', function () {
         args: [
           { name: 'arg1', missing: ['description'] }
         ]
+      },
+      {
+        name: 'field3',
+        missing: ['deprecationReason'],
+        args: []
       }
     ])
   })

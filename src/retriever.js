@@ -7,6 +7,8 @@ const query = `query {
       fields {
         name
         description
+        isDeprecated
+        deprecationReason
         args {
           name
           description
