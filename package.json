@@ -4,9 +4,9 @@
   "description": "Check for missing descriptions and field names in your GraphQL API",
   "author": "Jordan Adams <hi@jordanadams.co.uk>",
   "license": "ISC",
-  "main": "dist/index.js",
+  "main": "dist/bin/graphql-doc-check.js",
   "bin": {
-    "graphql-doc-check": "dist/index.js"
+    "graphql-doc-check": "dist/bin/graphql-doc-check.js"
   },
   "scripts": {
     "clean": "rm -rf dist",
