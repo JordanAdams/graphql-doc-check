@@ -1,7 +1,7 @@
 {
   "name": "graphql-doc-check",
   "version": "0.1.0",
-  "description": "Check for missing descriptions and field names in your GraphQL API",
+  "description": "Check for missing documentation in your GraphQL Schema",
   "author": "Jordan Adams <hi@jordanadams.co.uk>",
   "license": "ISC",
   "main": "dist/bin/graphql-doc-check.js",

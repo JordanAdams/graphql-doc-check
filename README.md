@@ -3,6 +3,7 @@ GraphQL Documentation Check
 
 [![Build Status](https://travis-ci.org/JordanAdams/graphql-doc-check.svg?branch=master)](https://travis-ci.org/JordanAdams/graphql-doc-check)
 [![Dependency Status](https://david-dm.org/jordanadams/graphql-doc-check.svg)](https://david-dm.org/jordanadams/graphql-doc-check)
+[![npm](https://img.shields.io/npm/v/graphql-doc-check.svg)](https://www.npmjs.com/package/graphql-doc-check)
 [![Gitter](https://badges.gitter.im/JordanAdams/graphql-doc-check.svg)](https://gitter.im/JordanAdams/graphql-doc-check?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 Quickly find any missing documentation in your GraphQL API using introspection. Performs inspections remotely, without any need to access code.
@@ -23,6 +24,10 @@ API is running at `http://localhost:80/graphql`.
 Alternatively, you can pass a URL to check.
 
     $ graphql-doc-check https://example.com/graph
+
+For more info, consult the help:
+
+    $ graphql-doc-check -h
 
 Results are shown in a tree structure with fields missing documentation in red.
 
