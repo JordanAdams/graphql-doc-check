@@ -3,14 +3,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Added
+- Deprecation reason check
 - HTTP Header option
 - Changelog file
 
 ### Changed
-- Unifies schema format across retriever, parser and printer. Allows for easier
-  reasoning of data flow.
+- Moved CLI script to `/bin` in prep for exposing module.
+- Unifies data structure across retriever, parser and printer.
 - Tidies up some code and adds missing comments
-- Git now ignores npm-debug.log
+- Git now ignores `npm-debug.log`
 - Makes screenshot URL in README absolute
 
 
