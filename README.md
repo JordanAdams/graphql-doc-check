@@ -25,7 +25,7 @@ Alternatively, you can pass a URL to check.
 
     $ graphql-doc-check https://example.com/graph
 
-For more info, consult the help:
+For more info, check the help or read [the wiki](https://github.com/JordanAdams/graphql-doc-check/wiki).
 
     $ graphql-doc-check -h
 
